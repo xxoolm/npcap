@@ -1,3 +1,21 @@
+## Npcap 1.88 [2026-05-05]
+
+* Fixed an issue that would cause processes to hang when closing a capture
+  handle if the Npcap driver had rejected a BPF filter. Fixes [#842](http://issues.npcap.org/842).
+
+* Fixed the behavior where the outermost VLAN tag would be stripped from
+  packets with more than one VLAN tag. Fixes [#838](http://issues.npcap.org/838).
+
+* Expanded the list of [installer exit codes](https://npcap.com/guide/npcap-users-guide.html#npcap-installation-exit)
+  to cover the cases of installer already running and unsupported versions of
+  Windows (Vista/Server 2008 and earlier). Also, if install is aborted due to
+  an existing newer or equivalent Npcap installation, the exit code will be 0.
+
+* Installer is built with NSIS 3.12, addressing a potential privilege escalation.
+
+* Signed NSIS plugin DLLs that had not been signed in some previous releases.
+  Fixes [#832](http://issues.npcap.org/832).
+
 ## Npcap 1.87 [2026-02-04]
 
 * Fix a bug causing various BSoD crashes in `NPF_DoTap()`. Fixes [#831](https://issues.npcap.org/831).
